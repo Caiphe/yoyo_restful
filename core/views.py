@@ -15,7 +15,7 @@ def index(request):
         number_of_days = request.POST.get('number_of_days')
 
         # It's a free api they get only give us up to 3 days forecast
-        if not int(number_of_days) > 10:
+        if not int(number_of_days) > 3:
             api_key = settings.WEATHER_KEY
             base_url = f'http://api.weatherapi.com/v1/forecast.json?key={api_key}&q={city}&days={number_of_days}&aqi=no&alerts=no'
             weather_data = requests.get(base_url).json()
