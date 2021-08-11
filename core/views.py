@@ -9,7 +9,6 @@ def index(request):
     minimum_values = []
     average_values = []
     median_values = []
-    dates_list = []
 
     if request.method == 'POST':
         city = request.POST.get('city')
@@ -22,7 +21,6 @@ def index(request):
             weather_data = requests.get(base_url).json()
 
             for item in weather_data['forecast']['forecastday']:
-                dates_list.append(item['date'])
                 maximum_values.append(item['day']['maxtemp_c'])
                 minimum_values.append(item['day']['mintemp_c'])
                 average_values.append(item['day']['avgtemp_c'])
@@ -34,7 +32,6 @@ def index(request):
         "minimum": minimum_values,
         "average": average_values,
         "median": median_values,
-        "dates": dates_list
     }
 
     return render(request, 'index.html', context)
