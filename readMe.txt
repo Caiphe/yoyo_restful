@@ -1,4 +1,6 @@
 This app runs on local machine with python 3.8 and django 3 installed, and it uses  https://www.weatherapi.com/ to the weather data
+If you would like to change the api key please do it from the settings.py file.
+
 To run this app:
 1. Clone this project to you local computer
 2. Create a virtual environment with the command "python3.8 -m venv any-name" or "virtualenv -p python3.8 any-name"
